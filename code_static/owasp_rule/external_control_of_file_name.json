@@ -1,0 +1,68 @@
+{
+    "crime": "External Control of File Name or Path",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "External Control of File Path via Environment",
+            "pattern": "Environment.getExternalStorageDirectory\\(\\)",
+            "class": "android.os.Environment",
+            "description": "Accesses external storage directory which can be manipulated externally."
+        },
+        {
+            "name": "File Creation with External Input",
+            "pattern": "new File\\(.*\\)",
+            "class": "java.io.File",
+            "description": "Creates a file object with potentially external controlled input."
+        },
+        {
+            "name": "File Creation with External Path",
+            "pattern": "new File\\(Environment\\.getExternalStorageDirectory\\(\\),.*\\)",
+            "class": "java.io.File",
+            "description": "Creates a file object using a path from external storage directory."
+        },
+        {
+            "name": "Writing to File with External Path",
+            "pattern": "new FileWriter\\(new File\\(.*\\)\\)",
+            "class": "java.io.FileWriter",
+            "description": "Writes to a file using a potentially externally controlled path."
+        },
+        {
+            "name": "Using getLastPathSegment from Uri",
+            "pattern": "new File\\(Environment\\.getExternalStorageDirectory\\(\\),\\s*uri\\.getLastPathSegment\\(\\)\\)",
+            "class": "java.io.File",
+            "description": "Using getLastPathSegment with Uri parameter without proper validation."
+        },
+        {
+            "name": "Using Uri.getPath",
+            "pattern": "new File\\(uri\\.getPath\\(\\)\\)",
+            "class": "java.io.File",
+            "description": "Using Uri.getPath without proper validation."
+        },
+        {
+            "name": "Untrusted Path from Intent Extra",
+            "pattern": "new File\\(.*intent\\.getStringExtra\\(.*\\)\\)",
+            "class": "java.io.File",
+            "description": "Creates a file using a path from an untrusted intent extra."
+        },
+        {
+            "name": "Untrusted Path from Bundle",
+            "pattern": "new File\\(.*bundle\\.getString\\(.*\\)\\)",
+            "class": "java.io.File",
+            "description": "Creates a file using a path from an untrusted bundle."
+        },
+        {
+            "name": "Untrusted Path from SharedPreferences",
+            "pattern": "new File\\(.*sharedPreferences\\.getString\\(.*\\)\\)",
+            "class": "java.io.File",
+            "description": "Creates a file using a path from untrusted shared preferences."
+        },
+        {
+            "name": "Untrusted Path from External Storage",
+            "pattern": "new File\\(.*Environment\\.getExternalStorageDirectory\\(\\).getPath\\(\\).*\\)",
+            "class": "java.io.File",
+            "description": "Creates a file using a path from external storage directory without validation."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

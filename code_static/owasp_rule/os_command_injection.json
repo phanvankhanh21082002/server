@@ -1,0 +1,56 @@
+{
+    "crime": "Improper Neutralization of Special Elements used in an OS Command (‘OS Command Injection’)",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Using Runtime exec with external input from Intent",
+            "pattern": "Runtime\\.getRuntime\\(\\)\\.exec\\(intent\\.getStringExtra\\(\\)",
+            "class": "java.lang.Runtime",
+            "description": "Using external strings from Intent as commands without proper validation."
+        },
+        {
+            "name": "Using Runtime exec with external input from Bundle",
+            "pattern": "Runtime\\.getRuntime\\(\\)\\.exec\\(bundle\\.getString\\(\\)",
+            "class": "java.lang.Runtime",
+            "description": "Using external strings from Bundle as commands without proper validation."
+        },
+        {
+            "name": "Using Runtime exec with external input from SharedPreferences",
+            "pattern": "Runtime\\.getRuntime\\(\\)\\.exec\\(sharedPreferences\\.getString\\(\\)",
+            "class": "java.lang.Runtime",
+            "description": "Using external strings from SharedPreferences as commands without proper validation."
+        },
+        {
+            "name": "Using ProcessBuilder with external input from Intent",
+            "pattern": "new ProcessBuilder\\(intent\\.getStringExtra\\(\\)",
+            "class": "java.lang.ProcessBuilder",
+            "description": "Using external strings from Intent to build process commands without proper validation."
+        },
+        {
+            "name": "Using ProcessBuilder with external input from Bundle",
+            "pattern": "new ProcessBuilder\\(bundle\\.getString\\(\\)",
+            "class": "java.lang.ProcessBuilder",
+            "description": "Using external strings from Bundle to build process commands without proper validation."
+        },
+        {
+            "name": "Using ProcessBuilder with external input from SharedPreferences",
+            "pattern": "new ProcessBuilder\\(sharedPreferences\\.getString\\(\\)",
+            "class": "java.lang.ProcessBuilder",
+            "description": "Using external strings from SharedPreferences to build process commands without proper validation."
+        },
+        {
+            "name": "Using Runtime exec with external input",
+            "pattern": "Runtime\\.getRuntime\\(\\)\\.exec\\(.*\\)",
+            "class": "java.lang.Runtime",
+            "description": "Using external strings as commands without proper validation."
+        },
+        {
+            "name": "Using ProcessBuilder with external input",
+            "pattern": "new ProcessBuilder\\(.*\\)",
+            "class": "java.lang.ProcessBuilder",
+            "description": "Using external strings to build process commands without proper validation."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

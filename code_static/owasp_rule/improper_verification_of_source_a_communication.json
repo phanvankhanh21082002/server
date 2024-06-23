@@ -1,0 +1,38 @@
+{
+    "crime": "Improper Verification of Source of a Communication Channel",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Load URL from Intent and open WebView",
+            "pattern": "webView\\.loadUrl\\(intent\\.getStringExtra\\(.*\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs directly from Intent and opening them in WebView without verifying the source."
+        },
+        {
+            "name": "Load URL from Intent Data",
+            "pattern": "webView\\.loadUrl\\(intent\\.getData\\(.*\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs directly from Intent data without verifying the source."
+        },
+        {
+            "name": "Load URL from Bundle",
+            "pattern": "webView\\.loadUrl\\(bundle\\.getString\\(.*\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs directly from Bundle and opening them in WebView without verifying the source."
+        },
+        {
+            "name": "Set URL from Intent",
+            "pattern": "setUrl\\(intent\\.getStringExtra\\(.*\\)\\)",
+            "class": "android.widget.TextView",
+            "description": "Setting URL directly from Intent without verifying the source."
+        },
+        {
+            "name": "Set URL from Bundle",
+            "pattern": "setUrl\\(bundle\\.getString\\(.*\\)\\)",
+            "class": "android.widget.TextView",
+            "description": "Setting URL directly from Bundle without verifying the source."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

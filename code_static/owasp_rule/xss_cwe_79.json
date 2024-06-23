@@ -1,0 +1,20 @@
+{
+    "crime": "Improper Neutralization of Input During Web Page Generation",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Load URL from any source into WebView",
+            "pattern": "webView\\.loadUrl\\(.*\\.toString\\(\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs from any input source into a WebView without validation."
+        },
+        {
+            "name": "Load URL from Intent Data into WebView",
+            "pattern": "webView\\.loadUrl\\(intent\\.getData\\(\\)\\.toString\\(\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs directly from Intent data into a WebView without validation."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

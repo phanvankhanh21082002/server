@@ -1,0 +1,32 @@
+{
+    "crime": "Using external strings as commands",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Using Intent getStringExtra",
+            "pattern": "getStringExtra\\(.*\\)",
+            "class": "android.content.Intent",
+            "description": "Using Intent.getStringExtra to get a string from an external source."
+        },
+        {
+            "name": "Using Runtime exec",
+            "pattern": "Runtime\\.getRuntime\\(\\)\\.exec\\(.*\\)",
+            "class": "java.lang.Runtime",
+            "description": "Using Runtime.exec to execute a command from an external source."
+        },
+        {
+            "name": "Using ProcessBuilder init",
+            "pattern": "new ProcessBuilder\\(.*\\)",
+            "class": "java.lang.ProcessBuilder",
+            "description": "Using ProcessBuilder to construct a process with arguments from an external source."
+        },
+        {
+            "name": "Using ProcessBuilder command",
+            "pattern": "ProcessBuilder\\.command\\(.*\\)",
+            "class": "java.lang.ProcessBuilder",
+            "description": "Using ProcessBuilder.command to set a command from an external source."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

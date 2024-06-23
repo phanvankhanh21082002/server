@@ -1,0 +1,80 @@
+{
+    "crime": "Use of Weak Hash Algorithm",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Use of MD2 in MessageDigest",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"MD2\"\\)",
+            "class": "java.security.MessageDigest",
+            "description": "Using MD2 hash algorithm which is considered weak."
+        },
+        {
+            "name": "Use of MD4 in MessageDigest",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"MD4\"\\)",
+            "class": "java.security.MessageDigest",
+            "description": "Using MD4 hash algorithm which is considered weak."
+        },
+        {
+            "name": "Use of PANAMA in MessageDigest",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"PANAMA\"\\)",
+            "class": "java.security.MessageDigest",
+            "description": "Using PANAMA hash algorithm which is considered weak."
+        },
+        {
+            "name": "Use of SHA0 in MessageDigest",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"SHA-0\"\\)",
+            "class": "java.security.MessageDigest",
+            "description": "Using SHA-0 hash algorithm which is considered weak."
+        },
+        {
+            "name": "Use of HAVAL128 in MessageDigest",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"HAVAL-128\"\\)",
+            "class": "java.security.MessageDigest",
+            "description": "Using HAVAL-128 hash algorithm which is considered weak."
+        },
+        {
+            "name": "Use of RIPEMD128 in MessageDigest",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"RIPEMD-128\"\\)",
+            "class": "java.security.MessageDigest",
+            "description": "Using RIPEMD-128 hash algorithm which is considered weak."
+        },
+        {
+            "name": "Use of MD2 in SecretKeyFactory",
+            "pattern": "\\bSecretKeyFactory\\.getInstance\\(\"MD2\"\\)",
+            "class": "javax.crypto.SecretKeyFactory",
+            "description": "Using MD2 hash algorithm in SecretKeyFactory which is considered weak."
+        },
+        {
+            "name": "Use of MD4 in SecretKeyFactory",
+            "pattern": "\\bSecretKeyFactory\\.getInstance\\(\"MD4\"\\)",
+            "class": "javax.crypto.SecretKeyFactory",
+            "description": "Using MD4 hash algorithm in SecretKeyFactory which is considered weak."
+        },
+        {
+            "name": "Use of PANAMA in SecretKeyFactory",
+            "pattern": "\\bSecretKeyFactory\\.getInstance\\(\"PANAMA\"\\)",
+            "class": "javax.crypto.SecretKeyFactory",
+            "description": "Using PANAMA hash algorithm in SecretKeyFactory which is considered weak."
+        },
+        {
+            "name": "Use of SHA0 in SecretKeyFactory",
+            "pattern": "\\bSecretKeyFactory\\.getInstance\\(\"SHA-0\"\\)",
+            "class": "javax.crypto.SecretKeyFactory",
+            "description": "Using SHA-0 hash algorithm in SecretKeyFactory which is considered weak."
+        },
+        {
+            "name": "Use of HAVAL128 in SecretKeyFactory",
+            "pattern": "\\bSecretKeyFactory\\.getInstance\\(\"HAVAL-128\"\\)",
+            "class": "javax.crypto.SecretKeyFactory",
+            "description": "Using HAVAL-128 hash algorithm in SecretKeyFactory which is considered weak."
+        },
+        {
+            "name": "Use of RIPEMD128 in SecretKeyFactory",
+            "pattern": "\\bSecretKeyFactory\\.getInstance\\(\"RIPEMD-128\"\\)",
+            "class": "javax.crypto.SecretKeyFactory",
+            "description": "Using RIPEMD-128 hash algorithm in SecretKeyFactory which is considered weak."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

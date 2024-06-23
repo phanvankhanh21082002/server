@@ -1,0 +1,38 @@
+{
+    "crime": "Cleartext Storage of Sensitive Information",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Send Sensitive Data Over HTTP",
+            "pattern": "\\b(HttpURLConnection|HttpClient)\\b.*?\\.(openConnection|execute)\\(.*\\);",
+            "class": "java.net.HttpURLConnection|org.apache.http.client.HttpClient"
+        },
+        {
+            "name": "Store Sensitive Data in Cloud Storage",
+            "pattern": "\\b(AmazonS3Client|CloudStorageAccount|BlobServiceClient)\\b.*?\\.putObject\\(.*?\\);",
+            "class": "com.amazonaws.services.s3.AmazonS3Client|com.microsoft.azure.storage.CloudStorageAccount|com.azure.storage.blob.BlobServiceClient"
+        },
+        {
+            "name": "Logging Sensitive Information",
+            "pattern": "\\bLog\\.(d|v|i|w|e)\\(\\s*\".*?\"\\s*,\\s*\".*(password|email|token|ssn).*?\"\\s*\\)",
+            "class": "android.util.Log"
+        },
+        {
+            "name": "Use of Encoding Instead of Encryption",
+            "pattern": "\\b(Base64|URLEncoder)\\b.*?\\.(encode|encodeToString)\\(.*?\\);",
+            "class": "java.util.Base64|java.net.URLEncoder"
+        },
+        {
+            "name": "Store Sensitive Data Locally",
+            "pattern": "\\bFileOutputStream\\b.*?\\.(write|append)\\(.*?\\);",
+            "class": "java.io.FileOutputStream"
+        },
+        {
+            "name": "Use of Weak Encryption",
+            "pattern": "\\bCipher\\b.*?\\.getInstance\\(\"DES\"\\);",
+            "class": "javax.crypto.Cipher"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

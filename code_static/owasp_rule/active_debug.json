@@ -1,0 +1,38 @@
+{
+    "crime": "Active Debug Code",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Direct check using ApplicationInfo.FLAG_DEBUGGABLE",
+            "pattern": "\\(getApplicationInfo\\(\\)\\.flags & ApplicationInfo\\.FLAG_DEBUGGABLE\\) != 0",
+            "class": "android.app.Application",
+            "description": "Checks if the application is in debuggable mode using ApplicationInfo.FLAG_DEBUGGABLE."
+        },
+        {
+            "name": "Checking BuildConfig.DEBUG",
+            "pattern": "if \\(BuildConfig\\.DEBUG\\)",
+            "class": "android.app.Application",
+            "description": "Checks if the application is in debuggable mode using BuildConfig.DEBUG."
+        },
+        {
+            "name": "Checking Build.VERSION.SDK_INT for DEBUG",
+            "pattern": "if \\(Build\\.VERSION\\.SDK_INT == Build\\.VERSION_CODES\\.DEBUG\\)",
+            "class": "android.app.Application",
+            "description": "Checks if the application is in debuggable mode using Build.VERSION.SDK_INT."
+        },
+        {
+            "name": "Logging methods wrapped in a debug check",
+            "pattern": "if \\(isDebuggable\\(\\)\\)\\s*\\{\\s*Log\\.d\\(",
+            "class": "android.app.Application",
+            "description": "Logging methods wrapped in a debug check."
+        },
+        {
+            "name": "Custom debug flags",
+            "pattern": "boolean isDebug = true|false;",
+            "class": "android.app.Application",
+            "description": "Custom debug flags used for enabling debug code."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

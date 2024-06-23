@@ -1,0 +1,58 @@
+{
+    "crime": "Deserialization of Untrusted Data",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Deserialization using ObjectInputStream",
+            "pattern": "\\bnew\\s+ObjectInputStream\\(.*?\\)",
+            "class": "java.io.ObjectInputStream"
+        },
+        {
+            "name": "Deserialization using readObject",
+            "pattern": "\\breadObject\\(\\s*\\)",
+            "class": "java.io.ObjectInputStream"
+        },
+        {
+            "name": "Deserialization using XMLDecoder",
+            "pattern": "\\bnew\\s+XMLDecoder\\(.*?\\)",
+            "class": "java.beans.XMLDecoder"
+        },
+        {
+            "name": "Deserialization using JSON",
+            "pattern": "\\bfromJson\\(.*?\\)",
+            "class": "com.google.gson.Gson"
+        },
+        {
+            "name": "Deserialization using readObject in custom classes",
+            "pattern": "\\bvoid\\s+readObject\\(java\\.io\\.ObjectInputStream\\s+.*?\\)",
+            "class": ".*"
+        },
+        {
+            "name": "Deserialization using YAML",
+            "pattern": "\\bnew\\s+Yaml\\(.*?\\).load\\(.*?\\)",
+            "class": "org.yaml.snakeyaml.Yaml"
+        },
+        {
+            "name": "Deserialization using readResolve",
+            "pattern": "\\bObject\\s+readResolve\\(\\s*\\)",
+            "class": ".*"
+        },
+        {
+            "name": "Deserialization using readExternal",
+            "pattern": "\\bvoid\\s+readExternal\\(java\\.io\\.ObjectInput\\s+.*?\\)",
+            "class": "java.io.Externalizable"
+        },
+        {
+            "name": "Deserialization using Apache Commons",
+            "pattern": "\\bSerializationUtils\\.deserialize\\(.*?\\)",
+            "class": "org.apache.commons.lang3.SerializationUtils"
+        },
+        {
+            "name": "Deserialization using Java's XStream",
+            "pattern": "\\bnew\\s+XStream\\(.*?\\).fromXML\\(.*?\\)",
+            "class": "com.thoughtworks.xstream.XStream"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

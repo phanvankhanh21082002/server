@@ -1,0 +1,33 @@
+{
+    "crime": "Cleartext Transmission of Sensitive Information",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Set Retrofit Base URL with HTTP",
+            "pattern": "\\.baseUrl\\(\\\"http://[^\"]*\\\"\\)",
+            "class": "retrofit2.Retrofit$Builder"
+        },
+        {
+            "name": "Set OkHttpClient Base URL with HTTP",
+            "pattern": "\\.url\\(\\\"http://[^\"]*\\\"\\)",
+            "class": "okhttp3.OkHttpClient$Builder"
+        },
+        {
+            "name": "Set HttpUrl Base URL with HTTP",
+            "pattern": "\\.parse\\(\\\"http://[^\"]*\\\"\\)",
+            "class": "okhttp3.HttpUrl"
+        },
+        {
+            "name": "Set RestAdapter Base URL with HTTP",
+            "pattern": "\\.setEndpoint\\(\\\"http://[^\"]*\\\"\\)",
+            "class": "retrofit.RestAdapter$Builder"
+        },
+        {
+            "name": "Generic HTTP URL in API call",
+            "pattern": "\\\"http://[^\"]*\\\"",
+            "class": "Any"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

@@ -1,0 +1,28 @@
+{
+    "crime": "Insertion of Sensitive Information into Log File (CWE-532)",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Sensitive Information in Log.d",
+            "pattern": "\\bLog\\.d\\(\\s*\".*?\"\\s*,\\s*\".*(token|password|decrypt).*?\"\\s*\\)"
+        },
+        {
+            "name": "Sensitive Information in Log.e",
+            "pattern": "\\bLog\\.e\\(\\s*\".*?\"\\s*,\\s*\".*(token|password|decrypt).*?\"\\s*\\)"
+        },
+        {
+            "name": "Sensitive Information in Log.i",
+            "pattern": "\\bLog\\.i\\(\\s*\".*?\"\\s*,\\s*\".*(token|password|decrypt).*?\"\\s*\\)"
+        },
+        {
+            "name": "Sensitive Information in Log.v",
+            "pattern": "\\bLog\\.v\\(\\s*\".*?\"\\s*,\\s*\".*(token|password|decrypt).*?\"\\s*\\)"
+        },
+        {
+            "name": "Sensitive Information in Log.w",
+            "pattern": "\\bLog\\.w\\(\\s*\".*?\"\\s*,\\s*\".*(token|password|decrypt).*?\"\\s*\\)"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

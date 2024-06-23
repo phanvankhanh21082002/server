@@ -1,0 +1,58 @@
+{
+    "crime": "Improper Control of Generation of Code",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Load External Code via createPackageContext",
+            "pattern": "\\bcreatePackageContext\\(\\s*\".*?\",\\s*CONTEXT_INCLUDE_CODE\\s*\\|\\s*CONTEXT_IGNORE_SECURITY\\s*\\)",
+            "class": "android.content.Context"
+        },
+        {
+            "name": "Load Class via ClassLoader.loadClass",
+            "pattern": "\\bloadClass\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.lang.ClassLoader"
+        },
+        {
+            "name": "Invoke Method via Class.getMethod",
+            "pattern": "\\bgetMethod\\(\\s*\".*?\",\\s*Class\\s*\\.\\s*class\\s*\\)",
+            "class": "java.lang.Class"
+        },
+        {
+            "name": "Invoke Method via Method.invoke",
+            "pattern": "\\binvoke\\(\\s*.*?,\\s*.*?\\)",
+            "class": "java.lang.reflect.Method"
+        },
+        {
+            "name": "DexClassLoader Constructor",
+            "pattern": "\\bnew DexClassLoader\\(\\s*.*?,\\s*.*?,\\s*.*?,\\s*.*?\\)",
+            "class": "dalvik.system.DexClassLoader"
+        },
+        {
+            "name": "Load Dex File via DexFile.loadDex",
+            "pattern": "\\bloadDex\\(\\s*\".*?\"\\s*,\\s*\".*?\"\\s*,\\s*.*?\\)",
+            "class": "dalvik.system.DexFile"
+        },
+        {
+            "name": "Define Class via Unsafe.defineClass",
+            "pattern": "\\bdefineClass\\(\\s*.*?,\\s*.*?,\\s*.*?,\\s*.*?\\)",
+            "class": "sun.misc.Unsafe"
+        },
+        {
+            "name": "Add URL via URLClassLoader.addURL",
+            "pattern": "\\baddURL\\(\\s*new URL\\(\\s*\".*?\"\\s*\\)\\s*\\)",
+            "class": "java.net.URLClassLoader"
+        },
+        {
+            "name": "Load Library via System.loadLibrary",
+            "pattern": "\\bloadLibrary\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.lang.System"
+        },
+        {
+            "name": "Load Library via Runtime.loadLibrary",
+            "pattern": "\\bloadLibrary\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.lang.Runtime"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

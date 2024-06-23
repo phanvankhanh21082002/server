@@ -1,0 +1,28 @@
+{
+    "crime": "Improper Export of Android Application Components",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Exported Activity with Intent Filter",
+            "pattern": "<activity[^>]*android:exported=\"true\"[^>]*>.*<intent-filter>",
+            "description": "Detects exported Activities that have Intent Filters, indicating they can be invoked by other apps."
+        },
+        {
+            "name": "Exported Service",
+            "pattern": "<service[^>]*android:exported=\"true\"",
+            "description": "Identifies exported Services that can be started or bound by any application, which may lead to unauthorized actions."
+        },
+        {
+            "name": "Exported Content Provider",
+            "pattern": "<provider[^>]*android:exported=\"true\"",
+            "description": "Finds exported Content Providers that might be accessible by unintended external applications, potentially exposing sensitive data."
+        },
+        {
+            "name": "Exported Broadcast Receiver",
+            "pattern": "<receiver[^>]*android:exported=\"true\"",
+            "description": "Checks for exported Broadcast Receivers that can receive intents from non-system applications, possibly leading to unauthorized actions."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

@@ -1,0 +1,59 @@
+{
+    "crime": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "SQL Injection via StringBuilder",
+            "pattern": "\\bappend\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.lang.StringBuilder"
+        },
+        {
+            "name": "SQL Injection via rawQuery",
+            "pattern": "\\brawQuery\\(\\s*\".*?\"\\s*,\\s*.*?\\)",
+            "class": "android.database.sqlite.SQLiteDatabase"
+        },
+        {
+            "name": "SQL Injection via rawQuery Without Parameters",
+            "pattern": "\\brawQuery\\(\\s*\".*?\"\\s*\\)",
+            "class": "android.database.sqlite.SQLiteDatabase"
+        },
+        {
+            "name": "SQL Injection via execSQL",
+            "pattern": "\\bexecSQL\\(\\s*\".*?\"\\s*,\\s*.*?\\)",
+            "class": "android.database.sqlite.SQLiteDatabase"
+        },
+        {
+            "name": "SQL Injection via execSQL Without Parameters",
+            "pattern": "\\bexecSQL\\(\\s*\".*?\"\\s*\\)",
+            "class": "android.database.sqlite.SQLiteDatabase"
+        },
+        {
+            "name": "SQL Injection via query",
+            "pattern": "\\bquery\\(\\s*\".*?\"\\s*,\\s*.*?\\)",
+            "class": "android.database.sqlite.SQLiteQuery"
+        },
+        {
+            "name": "SQL Injection via compileStatement",
+            "pattern": "\\bcompileStatement\\(\\s*\".*?\"\\s*\\)",
+            "class": "android.database.sqlite.SQLiteDatabase"
+        },
+        {
+            "name": "SQL Injection via prepareStatement",
+            "pattern": "\\bprepareStatement\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.sql.Connection"
+        },
+        {
+            "name": "SQL Injection via Statement.execute",
+            "pattern": "\\bexecute\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.sql.Statement"
+        },
+        {
+            "name": "SQL Injection via Statement.executeQuery",
+            "pattern": "\\bexecuteQuery\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.sql.Statement"
+        }
+    ],
+    "score": 1,
+    "label": []
+}
+

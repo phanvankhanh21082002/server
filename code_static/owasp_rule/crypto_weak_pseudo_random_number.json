@@ -1,0 +1,20 @@
+{
+    "crime": "Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Use of java.util.Random Constructor",
+            "pattern": "new Random\\(\\)",
+            "class": "java.util.Random",
+            "description": "Use of java.util.Random constructor, which is not cryptographically secure."
+        },
+        {
+            "name": "Use of java.util.Random nextInt Method",
+            "pattern": "random\\.nextInt\\(",
+            "class": "java.util.Random",
+            "description": "Use of java.util.Random nextInt method, which is not cryptographically secure."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

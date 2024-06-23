@@ -1,0 +1,34 @@
+{
+    "crime": "Use of RSA Algorithm without OAEP",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "RSA without OAEP using PKCS1Padding",
+            "pattern": "\\bCipher\\.getInstance\\(\\s*\"RSA/ECB/PKCS1Padding\"",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "RSA without OAEP using NoPadding",
+            "pattern": "\\bCipher\\.getInstance\\(\\s*\"RSA/ECB/NoPadding\"",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "RSA without OAEP using ECB and PKCS1Padding",
+            "pattern": "\\bCipher\\.getInstance\\(\\s*\"RSA/ECB/PKCS1Padding\"",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "RSA without OAEP using NONE and PKCS1Padding",
+            "pattern": "\\bCipher\\.getInstance\\(\\s*\"RSA/NONE/PKCS1Padding\"",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "RSA without OAEP using NONE and NoPadding",
+            "pattern": "\\bCipher\\.getInstance\\(\\s*\"RSA/NONE/NoPadding\"",
+            "class": "javax.crypto.Cipher"
+        }
+    ],
+    "score": 1,
+    "label": []
+}
+

@@ -1,0 +1,63 @@
+{
+    "crime": "Exposed Dangerous Method or Function",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Configure JavaScript Execution on Websites",
+            "pattern": "getSettings\\(\\).setJavaScriptEnabled\\(true\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Enable File Access in WebView",
+            "pattern": "getSettings\\(\\).setAllowFileAccess\\(true\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Enable File Access from File URLs in WebView",
+            "pattern": "getSettings\\(\\).setAllowFileAccessFromFileURLs\\(true\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Enable Universal Access from File URLs in WebView",
+            "pattern": "getSettings\\(\\).setAllowUniversalAccessFromFileURLs\\(true\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Add JavaScript Interface",
+            "pattern": "addJavascriptInterface\\(.*\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Bind Service with BIND_AUTO_CREATE",
+            "pattern": "bindService\\(.*?,\\s*.*?,\\s*Context.BIND_AUTO_CREATE\\)",
+            "class": "android.content.Context"
+        },
+        {
+            "name": "Enable WebView Debugging",
+            "pattern": "setWebContentsDebuggingEnabled\\(true\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Open Database",
+            "pattern": "openOrCreateDatabase\\(.*?\\)",
+            "class": "android.content.Context"
+        },
+        {
+            "name": "Load URL in WebView",
+            "pattern": "loadUrl\\(.*?\\)",
+            "class": "android.webkit.WebView"
+        },
+        {
+            "name": "Execute Shell Command",
+            "pattern": "Runtime.getRuntime\\(\\).exec\\(.*?\\)",
+            "class": "java.lang.Runtime"
+        },
+        {
+            "name": "Start Activity for Result",
+            "pattern": "startActivityForResult\\(.*?\\)",
+            "class": "android.content.Context"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

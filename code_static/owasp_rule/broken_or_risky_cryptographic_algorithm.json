@@ -1,0 +1,47 @@
+{
+    "crime": "Use of a Broken or Risky Cryptographic Algorithm",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Use of Cipher getInstance",
+            "pattern": "\\bCipher\\.getInstance\\(\"[A-Za-z0-9/]+\"\\)",
+            "class": "javax.crypto.Cipher",
+            "method": "getInstance",
+            "descriptor": "(Ljava/lang/String;)Ljavax/crypto/Cipher;"
+        },
+        {
+            "name": "Cipher init",
+            "pattern": "\\bCipher\\.init\\(",
+            "class": "javax.crypto.Cipher",
+            "method": "init",
+            "descriptor": "(I Ljava/security/Key;)V"
+        },
+        {
+            "name": "Use of DES",
+            "pattern": "\\bCipher\\.getInstance\\(\"DES\"\\)",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "Use of 3DES",
+            "pattern": "\\bCipher\\.getInstance\\(\"DESede\"\\)",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "Use of RC4",
+            "pattern": "\\bCipher\\.getInstance\\(\"RC4\"\\)",
+            "class": "javax.crypto.Cipher"
+        },
+        {
+            "name": "Use of MD5",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"MD5\"\\)",
+            "class": "java.security.MessageDigest"
+        },
+        {
+            "name": "Use of SHA-1",
+            "pattern": "\\bMessageDigest\\.getInstance\\(\"SHA-1\"\\)",
+            "class": "java.security.MessageDigest"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

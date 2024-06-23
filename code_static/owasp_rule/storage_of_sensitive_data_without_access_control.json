@@ -1,0 +1,48 @@
+{
+    "crime": "Storage of Sensitive Data in a Mechanism without Access Control",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Check File Existence",
+            "pattern": "\\bnew\\s+File\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.io.File"
+        },
+        {
+            "name": "File Exists",
+            "pattern": "\\bexists\\(\\s*\\)",
+            "class": "java.io.File"
+        },
+        {
+            "name": "Write to File",
+            "pattern": "\\bFileWriter\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.io.FileWriter"
+        },
+        {
+            "name": "Write to OutputStream",
+            "pattern": "\\bFileOutputStream\\(\\s*\".*?\"\\s*\\)",
+            "class": "java.io.FileOutputStream"
+        },
+        {
+            "name": "Write to SharedPreferences",
+            "pattern": "\\bSharedPreferences\\.Editor\\.putString\\(\\s*\".*?\"\\s*,\\s*\".*?\"\\s*\\)",
+            "class": "android.content.SharedPreferences.Editor"
+        },
+        {
+            "name": "Write to SQLite Database",
+            "pattern": "\\bSQLiteDatabase\\.insert\\(\\s*\".*?\"\\s*,\\s*null\\s*,\\s*.*?\\)",
+            "class": "android.database.sqlite.SQLiteDatabase"
+        },
+        {
+            "name": "Write to External Storage",
+            "pattern": "\\bEnvironment\\.getExternalStorageDirectory\\(\\s*\\)",
+            "class": "android.os.Environment"
+        },
+        {
+            "name": "Write to Clipboard",
+            "pattern": "\\bClipboardManager\\.setPrimaryClip\\(\\s*ClipData\\.newPlainText\\(\\s*\".*?\"\\s*,\\s*\".*?\"\\s*\\)\\)",
+            "class": "android.content.ClipboardManager"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

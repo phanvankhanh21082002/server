@@ -1,0 +1,33 @@
+{
+    "crime": "Improper Output Neutralization for Logs",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Logging data from TextInputEditText without neutralization",
+            "pattern": "Log\\.d\\(.*,\\s*textInputEditText\\.getText\\(\\)",
+            "class": "android.util.Log",
+            "description": "Logging data from TextInputEditText without proper neutralization."
+        },
+        {
+            "name": "Logging data directly from EditText",
+            "pattern": "Log\\.d\\(.*,\\s*editText\\.getText\\(\\)",
+            "class": "android.util.Log",
+            "description": "Logging data directly from EditText without proper neutralization."
+        },
+        {
+            "name": "Logging data directly from TextView",
+            "pattern": "Log\\.d\\(.*,\\s*textView\\.getText\\(\\)",
+            "class": "android.util.Log",
+            "description": "Logging data directly from TextView without proper neutralization."
+        },
+        {
+            "name": "Logging raw string data",
+            "pattern": "Log\\.d\\(.*,\\s*\".*\"\\)",
+            "class": "android.util.Log",
+            "description": "Logging raw string data without proper neutralization."
+        }
+    ],
+    "score": 1,
+    "label": []
+}
+

@@ -1,0 +1,28 @@
+{
+    "crime": "URL Redirection to Untrusted Site",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Redirect using Intent",
+            "pattern": "\\bgetIntent\\(\\s*\\).getStringExtra\\(\\s*\".*?\"\\s*\\)|\\bgetIntent\\(\\s*\\).getData\\(\\s*\\)",
+            "class": "android.content.Intent"
+        },
+        {
+            "name": "Redirect using Query Parameter",
+            "pattern": "\\bgetQueryParameter\\(\\s*\".*?\"\\s*\\)",
+            "class": "android.net.Uri"
+        },
+        {
+            "name": "Redirect using HttpServletResponse",
+            "pattern": "\\bHttpServletResponse.sendRedirect\\(\\s*\".*?\"\\s*\\)|\\bHttpServletResponse.setHeader\\(\\s*\"Location\"\\s*,\\s*\".*?\"\\s*\\)",
+            "class": "javax.servlet.http.HttpServletResponse"
+        },
+        {
+            "name": "Redirect using External Input",
+            "pattern": "\\bgetParameter\\(\\s*\".*?\"\\s*\\)|\\bgetHeader\\(\\s*\".*?\"\\s*\\)",
+            "class": "javax.servlet.http.HttpServletRequest"
+        }
+    ],
+    "score": 1,
+    "label": []
+}

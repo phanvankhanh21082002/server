@@ -1,0 +1,32 @@
+{
+    "crime": "Improper Input Validation - URL Loading",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Load URL from EditText into WebView",
+            "pattern": "webView\\.loadUrl\\(editText\\.getText\\(\\)\\.toString\\(\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs directly from user input (EditText) into a WebView without validation."
+        },
+        {
+            "name": "Load URL from TextView into WebView",
+            "pattern": "webView\\.loadUrl\\(textView\\.getText\\(\\)\\.toString\\(\\)\\)",
+            "class": "android.webkit.WebView",
+            "description": "Loading URLs directly from user input (TextView) into a WebView without validation."
+        },
+        {
+            "name": "Executing HTTP URL from EditText",
+            "pattern": "new URL\\(editText\\.getText\\(\\)\\.toString\\(\\)\\)",
+            "class": "java.net.HttpURLConnection",
+            "description": "Creating an HTTP connection directly from user input (EditText) without validation."
+        },
+        {
+            "name": "Executing HTTP URL from TextView",
+            "pattern": "new URL\\(textView\\.getText\\(\\)\\.toString\\(\\)\\)",
+            "class": "java.net.HttpURLConnection",
+            "description": "Creating an HTTP connection directly from user input (TextView) without validation."
+        }
+    ],
+    "score": 1,
+    "label": []
+}

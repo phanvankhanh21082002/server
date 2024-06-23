@@ -1,0 +1,32 @@
+{
+    "crime": "Improper Limitation of a Pathname to a Restricted Directory",
+    "permission": [],
+    "patterns": [
+        {
+            "name": "Accessing file in external storage directory",
+            "pattern": "new File\\(Environment\\.getExternalStorageDirectory\\(\\),",
+            "class": "java.io.File",
+            "description": "Creating a file in the external storage directory without proper validation."
+        },
+        {
+            "name": "Accessing file with constructed pathname",
+            "pattern": "new File\\(.*getPath.*\\)",
+            "class": "java.io.File",
+            "description": "Creating a file using a constructed pathname without proper validation."
+        },
+        {
+            "name": "Accessing file with untrusted input",
+            "pattern": "new File\\(.*\\.getInput.*\\)",
+            "class": "java.io.File",
+            "description": "Creating a file using untrusted input without proper validation."
+        },
+        {
+            "name": "Accessing file with openFile",
+            "pattern": "openFile\\(.*\\)",
+            "class": "android.content.Context",
+            "description": "Opening a file using untrusted input without proper validation."
+        }
+    ],
+    "score": 1,
+    "label": []
+}
